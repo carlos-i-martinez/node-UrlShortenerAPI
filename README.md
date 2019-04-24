@@ -1,4 +1,4 @@
-# API Project: URL Shortener Microservice for freeCodeCamp
+# API Project: URL Shortener Microservice 
   URL Shortener Microservice app that is built on the Glitch platform using Node.js, Express.js, Mongodb and Mongoose.
 
 ## Project 3 of 5 for [freeCodeCamp's](https://www.freecodecamp.com) Api and Microservices Developer Certification.
@@ -26,8 +26,8 @@ POST `https://fcc-urlshortener-apiproject.glitch.me/api/shorturl/new` - body (ur
 
 #### Usage:
 
-https://fcc-urlshortener-apiproject.glitch.me/api/shorturl/3
+https://fcc-urlshortener-apiproject.glitch.me/api/shorturl/0
 
 #### Will redirect to:
 
-https://www.freecodecamp.org/forum/
+https://www.freecodecamp.org/
