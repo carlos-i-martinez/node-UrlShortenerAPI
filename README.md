@@ -7,7 +7,7 @@ App Webpage: [URL Shortener API](https://fcc-urlshortener-apiproject.glitch.me "
 
 Glitch Project: [Url Shortener API Glitch Project](https://glitch.com/~fcc-urlshortener-apiproject)
  
-Completed API and Microservices Certification: [Certificate](https://www.freecodecamp.org/certification/carlitos/data-visualization "FreeCodeCamp.Com").
+Completed API and Microservices Certification: [Certificate](https://www.freecodecamp.org/certification/carlitos/apis-and-microservices "FreeCodeCamp.Com").
 
 ## Technologies Used:
 > * HTML, JavaScript, CSS, Node.js, Express.js, MongoDB and Mongoose.   
