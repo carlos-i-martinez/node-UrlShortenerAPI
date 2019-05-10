@@ -12,7 +12,6 @@ var app = express();
 var port = process.env.PORT || 3000;
 
 /** this project needs a db !! **/ 
-// mongoose.connect(process.env.MONGOLAB_URI);
 mongoose.connect(process.env.MONGO_URI,{ useNewUrlParser: true});
 mongoose.set('useCreateIndex', true);
 
@@ -38,16 +37,6 @@ blogSchema.plugin(autoIncrement.plugin, { model: 'Url', field: 'shortUrl' });
 
 var Url = mongoose.model('Url', blogSchema);
 
-/*var findUrl = function(Url, done) {
-  //var ageToSet = 20;
-  Url.findOne({origUrl:Url},function (err,data) {
-    if(err){
-        return done(err);
-    } 
-      return done(null,data);
-    });
-};
-*/
 var findOneByUrl = function(url, done) {
 
   Url.findOne({origUrl:url},function(err,data) {
@@ -61,18 +50,7 @@ var findOneByUrl = function(url, done) {
   return done(null,data);
   });
 };
-/*
-Url.findOne({origUrl:"http://www.google.com"},function(err,data) {
-  if(err) {
-    console.log('error');
-  }
-  if(data == null){
-    console.log('nohting found');
-  }
-  });
-*/
 
-//console.log(findOneByUrl("https://www.google.com",function (err, adventure) {}));
 app.use('/public', express.static(process.cwd() + '/public'));
 
 app.get('/', function(req, res){
@@ -86,6 +64,20 @@ app.get("/api/hello", function (req, res) {
 
 app.listen(port, function () {
   console.log('Node.js listening ...');
+});
+
+app.get('/api/all',function(req,res,next) { 
+next();}, function(req, res) {
+  Url.find({}, function(err, data) { 
+  if(!err) {
+      console.log('found');
+      console.log(data);
+      res.json(data);
+  }
+  else{
+      console.log('error');
+  }
+  });
 });
 
 app.post('/api/shorturl/new',function(req, res, next) {
